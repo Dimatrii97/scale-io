@@ -1,0 +1,200 @@
+@import url(https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap);
+@charset "UTF-8";
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0; }
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0; }
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5; }
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none; }
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto; }
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block; }
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em; }
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit; }
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important; } }
+
+body {
+  background: #fff;
+  color: #3a3a3a;
+  font-size: 16px; }
+  body::-webkit-scrollbar {
+    display: none; }
+
+.header {
+  background-color: #fdfdfd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5px 10px;
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 3px 2px #0000001f;
+  z-index: 10; }
+
+.logo {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  font-size: 2.3rem; }
+
+.nav__list {
+  display: flex;
+  list-style: none; }
+
+.nav__item {
+  margin-right: 20px; }
+  .nav__item::first-child {
+    margin-right: 0; }
+
+.nav__link {
+  text-decoration: none;
+  color: #3a3a3a;
+  font-size: 1.3rem; }
+
+@media (max-width: 600px) {
+  .nav {
+    display: none; } }
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  height: 100%;
+  width: 40px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; }
+  .sidebar .slide {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px; }
+    .sidebar .slide::after {
+      content: "";
+      width: 2.1px;
+      height: 35px;
+      background-color: #3a3a3a85;
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%); }
+  @media (max-width: 1170px) {
+    .sidebar {
+      display: none; } }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 40px; }
+
+.img-item {
+  margin: 20px 0;
+  box-shadow: 3px 6px 5px 1px #00000030;
+  transition: .1s linear; }
+  .img-item.text {
+    display: flex;
+    background: #fff; }
+  .img-item.text:nth-child(odd) {
+    flex-direction: row-reverse; }
+  @media (max-width: 768px) {
+    .img-item.text {
+      display: block; }
+    .img-item .img-c img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      max-height: 352px; } }
+  @media (max-width: 600px) {
+    .img-item .img-c img {
+      max-height: 230px; } }
+
+.info {
+  flex: 1 0 50%;
+  align-self: center; }
+  .info .title {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    font-size: 3.3rem;
+    text-align: center; }
+  .info .icon {
+    background-size: cover;
+    text-align: center;
+    margin: 20px auto; }
+    .info .icon.fl {
+      background-image: url("../img/fl.png");
+      width: 140px;
+      height: 63px; }
+    .info .icon.fr {
+      background-image: url("../img/fr.png");
+      width: 117px;
+      height: 72px; }
+  .info .text {
+    padding: 0 31px;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-bottom: 30px; }
+  @media (max-width: 600px) {
+    .info .icon-flowers {
+      width: 100px;
+      height: 45px;
+      margin: 10px auto; }
+    .info .text {
+      padding: 0 15px;
+      margin-bottom: 15px; } }
+
